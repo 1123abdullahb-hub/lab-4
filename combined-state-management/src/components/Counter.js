@@ -1,0 +1,31 @@
+
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../redux/actions";
+
+function Counter() {
+
+    const counter = useSelector(
+        (state) => state.counter
+    );
+
+    const dispatch = useDispatch();
+
+    return (
+        <div>
+            <h2>Redux Counter</h2>
+
+            <h1>{counter}</h1>
+
+            <button onClick={() => dispatch(increment())}>
+                Increment
+            </button>
+
+            <button onClick={() => dispatch(decrement())}>
+                Decrement
+            </button>
+        </div>
+    );
+}
+
+export default Counter;
